@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אדריכלות ועיצוב</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+
+    <header>
+        <h1>Interior planning and design</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#portfolio">תיק עבודות</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-overlay">
+            <h2>עיצוב שמדבר בעד עצמו</h2>
+        </div>
+        <img src="/images/DALL·E 2025-03-03.webp" עיצוב שמדבר בעד עצמו">
+    </section>
+
+    <section id="about">
+        <h2>אודות</h2>
+       
+        <p>[שם האדריכלית] היא אדריכלית בעלת ניסיון רב בתכנון ועיצוב חללים ייחודיים, עם דגש על חדשנות, פונקציונליות ואסתטיקה. כל פרויקט מלווה בגישה אישית ומותאם בדיוק לצרכי הלקוח, תוך שילוב חומרים איכותיים, פתרונות יצירתיים והתחשבות בסביבה ובאורח החיים של המשתמשים.
+
+            במשרדנו אנו מתמחים בתכנון בתים פרטיים, דירות יוקרה, מבני ציבור ומסחר, תוך הקפדה על הפרטים הקטנים ביותר. אנו מאמינים כי אדריכלות טובה יוצרת חוויית מגורים מושלמת, ולכן אנו שמים דגש על תכנון מוקפד, עיצוב נקי ומודרני ושימוש בטכנולוגיות מתקדמות.
+            
+            נשמח ללוות אתכם בתהליך ולהפוך את החזון שלכם למציאות..</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>תיק עבודות</h2>
+        <div>
+            <a href="files/גמר שלי סופי (3).pdf" target="_blank">
+                <img src="images/p1.jpg" alt="תיאור התמונה" width="300" height="200">
+            </a>
+        </div>
+        <div>
+            <a href="files/הגשה סופית שירה חזות 10.6.24.pdf" target="_blank">
+                <img src="images/p2.jpg" alt="תיאור התמונה" width="300" height="200">
+            </a>
+        </div>
+        <div>
+            <a href="files/הדמיה בפת.pdf" target="_blank">
+                <img src="images/p3.jpg" alt="תיאור התמונה" width="300" height="200">
+            </a>
+        </div>
+        <div>
+            <a href="files/תכנון ועיצוב יחידת דיור.pdf" target="_blank">
+                <img src="images/p4.jpg" alt="תיאור התמונה" width="300" height="200">
+            </a>
+        </div>
+    </section>
+
+
+    <section id="services">
+        <h2>שירותים</h2>
+        <ul>
+            <li>תכנון ועיצוב פנים</li>
+            <li>תכנון מבנים</li>
+            <li>ייעוץ בתחום האדריכלות</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>צור קשר</h2>
+        <form id="contact-form">
+            <input type="text" id="full_name" placeholder="שם מלא" required>
+            <input type="email" id="email" placeholder="אימייל" required>
+            <textarea id="message" placeholder="הודעה" required></textarea>
+            <button type="submit">שלח</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 כל הזכויות שמורות</p>
+    </footer>
+
+    <script type="text/javascript">
+        (function() {
+            // יש להחליף את YOUR_PUBLIC_KEY במפתח האמיתי שלך מ-EmailJS
+            emailjs.init('ERGzWBE5g5M5ybRUd');
+        })();
+    
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const formData = {
+                full_name: document.getElementById('full_name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+    
+            emailjs.send('service_tmhaya8', 'template_em1yzev', formData)
+                .then(function(response) {
+                    alert('ההודעה נשלחה בהצלחה!');
+                    document.getElementById('contact-form').reset(); // ניקוי הטופס לאחר שליחה מוצלחת
+                }, function(error) {
+                    console.error('Error:', error);
+                    alert('חלה שגיאה, אנא נסה שוב.');
+                });
+        });
+    </script>
+
+</body>
+
+</html>
