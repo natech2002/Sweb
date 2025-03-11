@@ -392,3 +392,48 @@ footer p {
         font-size: 1.8rem;
     }
 }
+/* עדכון סגנון Header לתצוגת מובייל */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        position: relative; /* הוספנו כדי שהכפתור יוכל להתמקם ביחס אליו */
+        padding-top: 50px; /* מרווח נוסף בחלק העליון כדי לפנות מקום לכפתור */
+    }
+    
+    /* סגנון כפתור המבורגר משופר */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px; /* ממקם את הכפתור בחלק העליון */
+        right: 15px;
+        z-index: 100; /* ערך z-index גבוה כדי להבטיח שהכפתור יהיה מעל שאר האלמנטים */
+        font-size: 28px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: rgba(157, 173, 162, 0.8); /* רקע שקוף חלקית בצבע דומה לרקע ה-header */
+        border-radius: 5px;
+    }
+    
+    header h1 {
+        margin-top: 5px; /* מרווח מהכפתור */
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        width: 100%; /* רוחב מלא */
+        text-align: center;
+    }
+}
+
+/* עדכון נוסף לתצוגות מובייל קטנות יותר */
+@media screen and (max-width: 480px) {
+    header {
+        padding-top: 60px; /* מרווח גדול יותר בחלק העליון במכשירים קטנים יותר */
+    }
+    
+    h1 {
+        font-size: 26px; /* כותרת קטנה יותר */
+    }
+}
